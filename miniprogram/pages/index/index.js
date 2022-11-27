@@ -34,5 +34,10 @@ Page({
         console.log('商品获取失败',err);
       }
     })
-  }
+  },
+  onShow: function () {
+    let that = this
+    that.onLoad()
+  },
+  
 })

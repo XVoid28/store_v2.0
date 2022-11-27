@@ -113,9 +113,13 @@ Page({
               select_classify:that.data.select_classify,
               details:that.data.details
             }
-          }).then(res=>{
+          }).then(res => {
             wx.hideLoading()
-            console.log('',res);
+            wx.showToast({
+              title: '已上架',
+              icon:'success'
+            })
+            wx.navigateBack()
           })
         }
       }).catch(error=>{
