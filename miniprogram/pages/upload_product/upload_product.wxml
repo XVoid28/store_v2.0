@@ -1,0 +1,60 @@
+<view class="lay_col_spa pad_20">
+  <!-- 书籍信息输入框 -->
+  <view class="lay_col_cen pad_20 case">
+    <view class="lay_row_sta">
+      <text>书籍信息</text>
+    </view>
+    <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin_bottom: 10rpx"/>
+    <view class="lay_row_sta" style="font-size: 25rpx;height: 70rpx;">
+      <text>书名：</text>
+      <input type="text" placeholder="请输入书籍名称" style="margin-left: 10rpx;" data-name="name" bindinput="input_msg" />
+    </view>
+    <view class="lay_row_sta" style="font-size: 25rpx;height: 70rpx;">
+      <text>价格：</text>
+      <input type="text" placeholder="请输入书籍价格" style="margin-left: 10rpx;" data-name="price" bindinput="input_msg"/>
+    </view>
+  </view>
+  <!-- 简介 -->
+  <view class="lay_col_cen pad_20 case">
+    <view class="lay_row_sta">
+      <text>书籍简介</text>
+    </view>
+    <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin_bottom: 10rpx"/>
+    <view class="lay_row_sta" style="font-size: 25rpx;">
+      <text>简介：</text>
+      <!-- <input type="text" placeholder="请用一句话描述你的书籍" style="margin-left: 10rpx;" data-name="name" bindinput="input_msg" /> -->
+      <textarea value="" placeholder="请用尽量简短的语言描述你的书籍概况" data-name="details" bindinput="input_details" style="height: 120rpx;" wrap="hard"/>
+    </view>
+  </view>
+  <!-- 分类 -->
+  <view class="lay_col_cen pad_20 case" style="margin-top: 40rpx">
+    <view class="lay_row_spa">
+      <text>书籍分类</text>
+    </view>
+    <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom: 10rpx"/>
+    <view class="lay_row_sta" style="flex-wrap: wrap;">
+      <van-radio-group value="{{ classify }}" bind:change="select_classify" direction="horizontal">
+        <block wx:for="{{classify}}" wx:key="index">
+          <van-radio name="{{item.name}}" shape="square" style="font-size: 25rpx;">{{item.name}}</van-radio>
+        </block>
+      </van-radio-group>
+    </view>
+  </view>
+  <!-- 图片 -->
+  <view class="lay_col_cen pad_20 case" style="margin-top: 40rpx">
+      <view class="lay_row_spa">
+        <text>书籍照片</text>
+        <van-button type="primary" size="small" bind:click="add_img">新增</van-button>
+      </view>
+      <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom: 10rpx"/>
+      <view class="lay_row_sta" style="flex-wrap: wrap">
+        <block wx:for="{{img}}" wx:key="index">
+          <image src="{{item}}" class="swiper_img" data-index="{{index}}" bindlongpress="delete_img"/>
+        </block>
+      </view>
+  </view>
+  <!-- 提交 -->
+  <view class="lay_col_cen" style="height: 400rpx;">
+    <van-button type="primary" size="large" color="#ff502f" style="width: 100%;" bind:click="submit">提交</van-button>
+  </view>
+</view>

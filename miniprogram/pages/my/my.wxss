@@ -1,0 +1,42 @@
+.user_msg{
+  height: 250rpx;
+  background-color: #ff502f;
+}
+.avg{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 100rpx;
+  margin-right: 20rpx;
+}
+.order_case{
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 10rpx #e9e9e9;
+  font-size: 25rpx;
+  color: #888888;
+}
+.order_icon{
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.fun_case{
+  background-color: white;
+  margin-top: 20rpx;
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 10rpx #e9e9e9;
+}
+.fun_item{
+  width: 33%;
+  font-size: 25rpx;
+  color: #888888;
+}
+.fun_row{
+  height: 130rpx;
+  margin-bottom: 30rpx;
+}
+.fun_img{
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 10rpx;
+}

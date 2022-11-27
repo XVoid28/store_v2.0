@@ -1,0 +1,140 @@
+/* 这是轮播图的样式 */
+.swp{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.swp_a{
+  width: 96%;
+  height: 350rpx;
+  margin-top: 15rpx;
+}
+.swp_img{
+  width: 100%;
+  height: 350rpx;
+  border-radius: 10rpx;
+}
+
+/* 这是板块的样式 */
+.fun{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 30rpx;
+}
+.fun_title{
+  width: 96%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 600;
+}
+.fun_a{
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+/* 左半部分 */
+.fun_left{
+  width: 48%;
+  height: 400rpx;
+  background-color:rgb(125,162,194);
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 5rpx 5rpx 10rpx #888888;
+}
+.fun_left_img{
+  width: 100%;
+  height: 400rpx;
+}
+/* 右半部分 */
+.fun_right{
+  width: 48%;
+  height: 400rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.right_a{
+  width: 100%;
+  height: 190rpx;
+  background-color: aqua;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 5rpx 5rpx 10rpx #888888;
+}
+.right_a_img{
+  width: 100%;
+  height: 190rpx;
+}
+.right_b{
+  width: 100%;
+  height: 190rpx;
+  background-color: rgb(104, 73, 146);
+  border-radius: 10rpx;
+  box-shadow: 5rpx 5rpx 10rpx#888888;
+}
+
+/* 书籍相关样式 */
+.pro{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+.pro_all{
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.pro_detail{
+  width: 44%;
+  padding: 20rpx;
+  box-shadow: 5rpx 5rpx 10rpx #888888;
+  border-radius: 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 20rpx;
+}
+.pro_img{
+  width: 100%;
+  height: 350rpx;
+  border-radius: 10rpx;
+}
+.pro_name{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pro_fun{
+  width: 96%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+}
+

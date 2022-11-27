@@ -1,0 +1,47 @@
+<!-- 书籍详情页面 -->
+<!-- 图片轮播 -->
+<swiper class="pro_case" circular="true" indicator-dots="true">
+  <block wx:for="{{product.img}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" class="pro_img"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view class="lay_col_cen pad_20">
+  <!-- 书籍信息展示 -->
+  <view class="lay_col_cen pro_msg pad_20">
+    <view class="lay_row_spa">
+      <text>{{product.name}}</text>
+    </view>
+    <view class="lay_row_spa" style="margin-top: 10rpx;">
+      <text style="color: red;">￥:{{product.price}}</text>
+    </view>
+    <view class="lay_row_end">
+      <text wx:if="{{product.isSale}}==true" style="font-size: 20rpx;color:#888;">在售：是</text>
+      <text wx:else style="font-size: 20rpx;color:#888;">在售：否</text>
+    </view>
+  </view>
+  <!-- 选择信息 -->
+  <view class="lay_col_cen pad_20 select_case">
+    <view class="lay_row_spa">
+      <text style="font-size: 25rpx;">详情</text>
+    </view>
+    <van-divider  style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom:10rpx"/>
+    <!-- 详情 -->
+    <view class="lay_row_spa">
+      <block>
+        <text>{{product.details}}</text>
+      </block>
+    </view>
+  </view>
+</view>
+
+<!-- 提交栏 -->
+<van-goods-action>
+  <van-goods-action-icon icon="chat-o" text="联系卖家" dot open-type="contact"/>
+  <van-goods-action-icon icon="cart-o" text="购物车" url="../shopping_car/shopping_car" link-type="switchTab"/>
+  <van-goods-action-button text="加入购物车" type="warning" bind:click="add_shopping_car"/>
+  <van-goods-action-button text="立即购买" bind:click="add_order"/>
+</van-goods-action>
+

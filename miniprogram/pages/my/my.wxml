@@ -1,0 +1,62 @@
+<view class="lay_row_spa pad_20 user_msg"> 
+  <!-- 个人信息 -->
+  <view class="lay_row_sta" style="width: 50%">
+    <image src="{{user.userInfo.avatarUrl}}" class="avg"/>
+    <text style="color: white;">{{user.userInfo.nickName}}</text>
+  </view>
+  <!-- <text>修改个人信息</text> -->
+</view>
+
+<!-- 内容 -->
+<view class="lay_col_cen pad_20">
+  <!-- 订单 -->
+  <view class="lay_col_cen pad_20 order_case">
+    <view class="lay_row_sta">
+    <text style="color: #ff502f;text-align: center;">我的订单</text>
+  </view>
+  <van-divider style="width: 100%;" custom-style="margin-top:10rpx;margin_bottom:10rpx"/>
+  <view class="lay_row_spa pad_20">
+    <view class="lay_row_spa">
+      <navigator class="lay_col_spa" style="height: 120rpx" url="../order/order?type=进行中">
+        <image src="/icons/进行中.png" class="order_icon"/>
+        <text>进行中</text>
+      </navigator>
+      <navigator class="lay_col_spa" style="height: 120rpx;" url="../order/order?type=已完成">
+        <image src="/icons/已完成.png " class="order_icon"/>
+          <text>已完成</text>
+      </navigator>
+    </view>
+  </view>
+  </view>
+  <!-- 功能模块 -->
+  <view class="lay_col_cen pad_20 fun_case">
+    <view class="lay_row_spa fun_row">
+      <view class="lay_col_cen fun_item" bindtap="my_address">
+        <image src="/icons/地址.png" class="fun_img"/>
+        <text>我的地址</text>
+      </view>
+      <navigator class="lay_col_cen fun_item" url="../upload_product/upload_product">
+        <image src="/icons/出售.png" class="fun_img"/>
+        <text>我要出售</text>
+      </navigator>
+      <view class="lay_col_cen fun_item">
+        <image src="/icons/地址.png" class="fun_img"/>
+        <text>我的地址</text>
+      </view>
+    </view>
+    <view class="lay_row_spa fun_row">
+      <view class="lay_col_cen fun_item">
+        <image src="/icons/地址.png" class="fun_img"/>
+        <text>我的地址</text>
+      </view>
+      <view class="lay_col_cen fun_item">
+        <image src="/icons/地址.png" class="fun_img"/>
+        <text>我的地址</text>
+      </view>
+      <view class="lay_col_cen fun_item">
+        <image src="/icons/地址.png" class="fun_img"/>
+        <text>我的地址</text>
+      </view>
+    </view>
+  </view>
+</view>

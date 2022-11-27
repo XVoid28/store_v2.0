@@ -1,0 +1,6 @@
+.swiper_img{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 10rpx;
+  margin: 10rpx;
+}

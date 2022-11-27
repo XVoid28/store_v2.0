@@ -1,0 +1,18 @@
+.product_case{
+  width: 100% !important;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.product_img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 10rpx;
+}
+.product_name{
+  height: 100rpx;
+  width: 80%;
+  margin-left: 25rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,60 @@
+<!-- 搜索框 -->
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" background="#ff502f" bind:search="search"/>
+
+<!-- 轮播图 -->
+<view class="swp">
+  <swiper class="swp_a" autoplay="true" circular="true" indicator-dots="true" interval="3000">
+    <block wx:for="{{swiper}}" wx:key="item">
+      <swiper-item wx:for="{{swiper}}" wx:key="item">
+        <image src="{{item.src}}" class="swp_img"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!-- 板块 -->
+<view class="fun">
+  <view class="fun_title">
+    <text>书籍分类</text>
+  </view>
+  <view class="fun_a">
+    <view class="fun_left">
+      <image src="/icons/公共课.png" class="fun_left_img"></image>
+    </view>
+    <view class="fun_right">
+      <view class="right_a">
+        <image src="/icons/专业课.png" class="right_a_img"></image>
+      </view>
+      <view class="right_b">
+        <image src="/icons/其他类.png" class="right_a_img"></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 书籍列表 -->
+<view class="pro">
+  <van-divider contentPosition="center" style="width: 96%;">书籍</van-divider>
+  <view class="pro_all">
+    <block wx:for="{{pro_list}}" wx:key="index">
+      <!-- 一本书 -->
+      <navigator url="../product_detail/product_detail?id={{item._id}}" class="pro_detail">
+        <image src="{{item.img[0]}}" class="pro_img"></image>
+        <view class="pro_name">
+          <text>{{item.name}}</text>
+        </view>
+        <view class="pro_fun">
+          <view>
+            <text style="color: red;">￥:{{item.price}}</text>
+          </view>
+          <view>
+            <van-icon name="cart-circle-o" size="70rpx" color="#ff502f"/>
+          </view>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>
+
+<!-- 留白 -->
+<view style="width:100%;height: 300rpx;"></view>

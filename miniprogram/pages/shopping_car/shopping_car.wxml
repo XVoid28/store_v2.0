@@ -1,0 +1,30 @@
+<view class="lay_col_sta pad_20">
+  <van-checkbox-group value="{{result}}" bind:change="select_product" style="width: 100%;">
+    <block wx:for="{{product_list}}" wx:key="index">
+      <van-checkbox shape="square" name="{{index}}" label-class="product_case">
+        <view class="lay_row_spa" style="margin-top: 20rpx;margin-bottom: 20rpx;margin-right: 20rpx;" data-id="{{item._id}}" bindlongpress="delete_product">
+          <view class="lay_row_sta" style="width: 100%;">
+            <image src="{{item.product_img}}" class="product_img"/>
+            <view class="product_name">
+              <text>{{item.product_name}}</text>
+              <view>
+                <text style="color: red;font-weight: bold;text-align: right;">￥：{{item.product_price}}</text>
+              </view>
+            </view>
+          </view>
+        </view> 
+      </van-checkbox>
+    </block>
+  </van-checkbox-group>
+</view>
+
+<van-submit-bar
+  price="{{ all_price }}"
+  button-text="提交订单"
+  bind:submit="submit_order"
+  safe-area-inset-bottom=""
+  tip="{{ true }}"
+>
+  <van-tag type="primary" wx:if="{{!is_all}}" data-name="全选" bindtap="select_all">全选</van-tag>
+  <van-tag type="primary" wx:else data-name="取消全选" bindtap="select_all">取消全选</van-tag>
+</van-submit-bar>

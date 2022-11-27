@@ -1,0 +1,53 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/product_detail/product_detail",
+    "pages/shopping_car/shopping_car",
+    "pages/add_order/add_order",
+    "pages/order/order",
+    "pages/upload_product/upload_product"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#FF502F",
+    "navigationBarTitleText": "Book Store",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "selectedColor": "#FF502F",
+    "color": "#888888",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/icons/首页.png",
+        "selectedIconPath": "/icons/首页 (选).png"
+      },
+      {
+        "pagePath": "pages/shopping_car/shopping_car",
+        "text": "购物车",
+        "iconPath": "/icons/购物车.png",
+        "selectedIconPath": "/icons/购物车 (选).png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/icons/我的.png",
+        "selectedIconPath": "/icons/我的 (选).png"
+      }
+    ]
+  },
+  "requiredPrivateInfos": [
+    "getFuzzyLocation",
+    "choosePoi",
+    "chooseAddress"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于地址管理"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

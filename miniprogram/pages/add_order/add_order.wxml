@@ -1,0 +1,49 @@
+<view class="lay_col_sta pad_20">
+  <!-- 我的地址 -->
+  <view class="lay_col_cen pad_20 address_case" bindtap="get_address">
+    <van-icon name="plus" color="#888888" size="50rpx" wx:if="{{!address.userName}}"></van-icon>
+    <text style="color: #888888; margin-top: 20rpx;" wx:if="{{!address.userName}}">选择地址</text>
+    <view class="lay_row_spa" style="font-size: 25rpx;" wx:if="{{address.userName}}">
+      <text>姓名：{{address.userName}}</text>
+      <text>联系方式：{{address.telNumber}}</text>
+    </view>
+    <view class="lay_row_sta" style="font-size: 25rpx;margin-top: 20rpx;" wx:if="{{address.userName}}">
+      <text style="color: #888888;">收货地址：{{address.provinceName}}{{address.cityName}}{{address.countyName}}{{address.detailInfo}}</text>
+    </view>
+  </view>
+  <!-- 书籍信息 -->
+  <view class="lay_col_cen address_case">
+    <view class="lay_row_sta">
+      <text>书籍信息</text>
+    </view>
+    <van-divider style="width: 100%;"></van-divider>
+    <block wx:for="{{books}}" wx:key="index">
+      <view class="lay_row_spa">
+        <view class="lay_row_sta">
+          <image src="{{item.product_img}}" class="boooks_img"/>
+          <view class="lay_col_spa">
+            <text style="font-weight: bold;">{{item.product_name}}</text>
+            <text style="color: red;">￥：{{item.product_price}}</text>
+            <text style="margin-bottom: 20rpx;">{{item.product_num}} 本</text>
+          </view>
+        </view>
+      </view>
+      <van-divider style="width: 100%;" wx:if="{{index+1 < books.length}}"></van-divider>
+    </block>
+  </view>
+  
+  <!-- 备注 -->
+  <view class="lay_col_cen pad_20 address_case">
+    <view class="lay_row_sta">
+      <text>备注</text>
+    </view>  
+    <van-divider style="width: 100%;"></van-divider>
+    <textarea name="" id="" cols="30" rows="10" style="width: 100%;height: 180rpx;" bindinput="input_remarks"></textarea>
+  </view>
+
+  <!-- 提交 -->
+  <view class="lay_col_cen" style="margin-top: 80rpx;">
+    <van-button type="primary" size="large" style="width: 100%;" color="#ff502f" bind:click="add_order">确认下单 (￥：{{all_price}})</van-button>
+  </view>
+</view>
+
