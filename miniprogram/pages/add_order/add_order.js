@@ -1,4 +1,5 @@
 const db = wx.cloud.database()
+const app = getApp()
 Page({
   /**
    * 页面的初始数据
@@ -85,7 +86,9 @@ Page({
           type:'进行中',
           remarks:that.data.remarks,
           all_price:that.data.all_price,
-          time:db.serverDate()
+          time:db.serverDate(),
+          buyer:app.globalData.userData._openid,
+          seller:that.data.books[0]._openid
         }
       }).then(res=>{
         wx.hideLoading()

@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/start/start",
     "pages/index/index",
     "pages/my/my",
     "pages/product_detail/product_detail",
@@ -7,9 +8,13 @@
     "pages/add_order/add_order",
     "pages/order/order",
     "pages/upload_product/upload_product",
-    "pages/manage_product/manage_product"
+    "pages/manage_product/manage_product",
+    "pages/manage_order/manage_order",
+    "pages/update_product/update_product"
+    
   ],
   "window":{
+    "backgroundColor": "#f6f6f6",
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#FF502F",
     "navigationBarTitleText": "Book Store",

@@ -1,0 +1,22 @@
+/* pages/start/start.wxss */
+/* 头像的样式 */
+.face{
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+}
+/* 用户的样式 */
+.nickName{
+  margin-top: 30rpx;
+}
+/* 整体头像和用户信息展示的样式 */
+.wrap{
+  text-align: center;
+}
+/* 手机号输入框 */
+.phoneNumber{
+  border: solid 1px;
+}
+.button{
+  margin-top: 20rpx;
+}

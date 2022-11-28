@@ -1,0 +1,9 @@
+<!-- 开始界面，用于用户登录和进入程序 -->
+<view class="container">
+    <image class="face" src="{{userInfo.avatarUrl}}"></image>
+    <view class="nickName">欢迎您！{{userInfo.nickName}}</view>
+    <!-- <button wx:if="{{userInfo == null}}" bindtap="login" type="primary">登录</button> -->
+    <van-button wx:if="{{userInfo == null}}" bind:click="login" type="primary" custom-style="margin-top: 20rpx" size="small">登录</van-button>
+    <!-- <button wx:else type="primary" bindtap="enter">进入集市</button> -->
+    <van-button type="primary" bind:click="enter" size="small" custom-style="margin-top: 20rpx">进入系统</van-button>
+</view>

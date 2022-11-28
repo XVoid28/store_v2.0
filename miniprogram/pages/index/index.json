@@ -1,4 +1,5 @@
 {
+  "enablePullDownRefresh": true,
   "usingComponents": {
     "van-search": "@vant/weapp/search/index",
     "van-divider": "@vant/weapp/divider/index",

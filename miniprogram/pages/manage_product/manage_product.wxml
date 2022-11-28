@@ -13,7 +13,7 @@
 <scroll-view style="width: 100%;height: 94vh;" scroll-y="true">
   <view class="lay_col_sta pad_20">
     <block wx:for="{{product}}" wx:key="index">
-      <navigator url="../product_detail/product_detail?id={{item._id}}" class="lay_col_cen pad_20 case" style="margin-bottom: 20rpx;font-size: 25rpx;">
+      <navigator url="../update_product/update_product?id={{item._id}}" class="lay_col_cen pad_20 case" style="margin-bottom: 20rpx;font-size: 25rpx;">
         <view class="lay_row_sta">
           <text>书名：{{item.name}}</text>
         </view>

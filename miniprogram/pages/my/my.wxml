@@ -1,10 +1,9 @@
 <view class="lay_row_spa pad_20 user_msg"> 
   <!-- 个人信息 -->
   <view class="lay_row_sta" style="width: 50%">
-    <image src="{{user.userInfo.avatarUrl}}" class="avg"/>
-    <text style="color: white;">{{user.userInfo.nickName}}</text>
+    <image src="{{userInfo.avatarUrl}}" class="avg"/>
+    <text style="color: white;">{{userInfo.nickName}}</text>
   </view>
-  <!-- <text>修改个人信息</text> -->
 </view>
 
 <!-- 内容 -->
@@ -41,10 +40,10 @@
       </navigator>
       <navigator url="../manage_product/manage_product" class="lay_col_cen fun_item">
         <image src="/icons/书籍.png" class="fun_img"/>
-        <text>我的书籍</text>
+        <text>我的发布</text>
       </navigator>
     </view>
-    <view class="lay_row_spa fun_row">
+    <!-- <view class="lay_row_spa fun_row">
       <view class="lay_col_cen fun_item">
         <image src="/icons/地址.png" class="fun_img"/>
         <text>我的地址</text>
@@ -57,6 +56,6 @@
         <image src="/icons/地址.png" class="fun_img"/>
         <text>我的地址</text>
       </view>
-    </view>
+    </view> -->
   </view>
 </view>

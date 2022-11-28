@@ -25,6 +25,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "订单管理",
+          "pathName": "pages/manage_order/manage_order",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "修改上架的书籍",
+          "pathName": "pages/update_product/update_product",
+          "query": "id=f2db721563849bbc01352a314b1a6cd7",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

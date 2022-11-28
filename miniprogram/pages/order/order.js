@@ -1,6 +1,7 @@
 // pages/order/order.js
 const db = wx.cloud.database()
 const time = require('../../utils/time.js')
+const app = getApp()
 Page({
 
   /**
@@ -40,7 +41,8 @@ Page({
       title: '加载中'
     })
     db.collection('order').where({
-      type:type
+      type:type,
+      buyer:app.globalData.userData._openid
     }).orderBy('time','desc').get().then(res=>{
       console.log('成功',res.data);
       wx.hideLoading()

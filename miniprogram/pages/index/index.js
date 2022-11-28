@@ -39,5 +39,16 @@ Page({
     let that = this
     that.onLoad()
   },
+  // 下拉刷新
+  onPullDownRefresh:function(){
+    wx.showNavigationBarLoading()
+    wx.reLaunch({
+      url: '/pages/index/index',
+      success:function(res){
+        wx.hideNavigationBarLoading()
+        wx.stopPullDownRefresh()
+      }
+    })
+  }
   
 })

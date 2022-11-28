@@ -1,6 +1,6 @@
 const time = require('../../utils/time.js')
 const db = wx.cloud.database()
-
+const app = getApp()
 Page({
 
   /**
@@ -20,7 +20,8 @@ Page({
     wx.cloud.callFunction({
       name:"product_manage",
       data:{
-        method:"get_product"
+        method:"get_product",
+        seller:app.globalData.userData._openid
       }
     }).then(res=>{
       wx.hideLoading()

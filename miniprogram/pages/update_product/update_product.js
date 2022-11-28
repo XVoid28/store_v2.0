@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:"",
     name:"",
     price:0,
     phoneNumber:"",
@@ -13,6 +14,67 @@ Page({
     classify:[],
     select_classify:"",
     details:""
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+    let that = this
+    that.get_classify()
+    wx.showLoading({
+      title: '加载中',
+    })
+    that.setData({
+      id:options.id
+    })
+    db.collection('product').doc(options.id).get({
+      success:function(res){
+        console.log('31行的res:',res);
+        wx.hideLoading()
+        that.setData({
+          id:res.data._id,
+          name:res.data.name,
+          price:res.data.price,
+          details:res.data.details,
+          phoneNumber:res.data.sellerPhoneNumber,
+          select_classify:res.data.select_classify
+        })
+      },fail:function(err){
+        console.log('这是41行的错误',err);
+      }
+    })
+  },
+  // 删除这本书
+  delete_book(e){
+    let that = this
+    wx.showModal({
+      title: '警告',
+      content: '是否确定下架该书？此操作不可恢复',
+      success (res) {
+        if (res.confirm) {
+          db.collection('product').doc(that.data.id).get().then(res=>{
+            if(res.data.isSale == true){
+              db.collection('product').doc(that.data.id).remove().then(res=>{
+                wx.showToast({
+                  title: '下架成功',
+                })
+                wx.redirectTo({
+                  url: '../my/my',
+                })
+              })
+            }else{
+              wx.showToast({
+                title: '交易中不可下架',
+                icon:'error'
+              })
+            }
+          })
+          
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
   // 删除照片
   delete_img(e){
@@ -111,8 +173,9 @@ Page({
         if(i+1 == img.length){
           //上传完了
           wx.cloud.callFunction({
-            name:"product",
+            name:"product_update",
             data:{
+              id:that.data.id,
               name:that.data.name,
               price:that.data.price,
               img:img,
@@ -127,7 +190,9 @@ Page({
               title: '已上架',
               icon:'success'
             })
-            wx.navigateBack()
+            wx.redirectTo({
+              url: '../my/my',
+            })()
           })
         }
       }).catch(error=>{
@@ -135,14 +200,6 @@ Page({
       })
       
     }
-  },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-    let that = this
-    that.get_classify()
-    console.log('这是上传页面的globalData',app.globalData.userData)
   },
 
   /**

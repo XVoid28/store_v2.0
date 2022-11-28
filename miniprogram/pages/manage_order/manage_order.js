@@ -1,37 +1,18 @@
-// pages/my/my.js
-const db = wx.cloud.database()
-const app = getApp()
+// pages/manage_order/manage_order.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo:{}
-  },
 
-  // 地址管理
-  my_address(){
-    let that = this
-    wx.chooseAddress({
-      success(res){
-        console.log('my address',res);
-      }
-    })
-  },
-  init(){
-    let that = this
-    that.setData({
-      userInfo:app.globalData.userData
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
-    let that = this
-    that.init()
+
   },
 
   /**
@@ -45,9 +26,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow() {
-    console.log('我的页面的globalData',app.globalData);
-    let that = this
-    that.init()
+
   },
 
   /**
