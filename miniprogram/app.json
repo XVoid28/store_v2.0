@@ -6,7 +6,8 @@
     "pages/shopping_car/shopping_car",
     "pages/add_order/add_order",
     "pages/order/order",
-    "pages/upload_product/upload_product"
+    "pages/upload_product/upload_product",
+    "pages/manage_product/manage_product"
   ],
   "window":{
     "backgroundTextStyle":"light",

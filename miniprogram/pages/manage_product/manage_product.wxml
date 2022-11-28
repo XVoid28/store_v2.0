@@ -1,0 +1,35 @@
+<view class="lay_row_spa head">
+  <view class="lay_row_cen search">
+    <input type="text" placeholder="按书名检索" bindinput="search" style="width: 100%;text-align: center;"/>
+  </view>
+  <view class="lay_row_cen" style="width: 25%;font-size: 25rpx;color: #fff;">
+    <picker range="{{classify_list}}" range-key="name" bindchange="select_classify">
+      <text style="margin-right: 10rpx;">{{classify}}</text>
+      <van-icon name="arrow-down" />
+    </picker>
+  </view>
+</view>
+<!-- 内容 -->
+<scroll-view style="width: 100%;height: 94vh;" scroll-y="true">
+  <view class="lay_col_sta pad_20">
+    <block wx:for="{{product}}" wx:key="index">
+      <navigator url="../product_detail/product_detail?id={{item._id}}" class="lay_col_cen pad_20 case" style="margin-bottom: 20rpx;font-size: 25rpx;">
+        <view class="lay_row_sta">
+          <text>书名：{{item.name}}</text>
+        </view>
+        <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom: 10rpx"></van-divider>
+        <view class="lay_row_spa">
+          <image src="{{ item.img[0] }}" class="pro_img"/>
+          <view class="lay_col_spa" style="height: 130rpx;width: 60%;">
+            <text style="color: red;font-size: 30rpx;">￥：{{ item.price }}</text>
+            <text>类别：{{item.select_classify}}</text>
+          </view>
+        </view>
+        <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom: 10rpx"></van-divider>
+        <view class="lay_row_end">
+          <text style="font-size: 20rpx;color: #888888;">上架时间：{{item.time}}</text>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</scroll-view>

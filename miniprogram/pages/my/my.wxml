@@ -39,10 +39,10 @@
         <image src="/icons/出售.png" class="fun_img"/>
         <text>我要出售</text>
       </navigator>
-      <view class="lay_col_cen fun_item">
-        <image src="/icons/地址.png" class="fun_img"/>
-        <text>我的地址</text>
-      </view>
+      <navigator url="../manage_product/manage_product" class="lay_col_cen fun_item">
+        <image src="/icons/书籍.png" class="fun_img"/>
+        <text>我的书籍</text>
+      </navigator>
     </view>
     <view class="lay_row_spa fun_row">
       <view class="lay_col_cen fun_item">

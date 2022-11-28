@@ -1,6 +1,5 @@
 const db = wx.cloud.database()
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -9,6 +8,14 @@ Page({
     books:{},
     remarks:"",
     all_price:0
+  },
+  // 从购物车删除
+  delete_books(){
+    let that = this
+    let books = that.data.books
+    for(let i=0;i<books.length;i++){
+      db.collection('shopping_car').doc(books[i]._id).remove()
+    }
   },
   // 选择地址
   get_address(){
@@ -70,6 +77,7 @@ Page({
       wx.showLoading({
         title: '下单中',
       })
+      that.delete_books()
       db.collection('order').add({
         data:{
           address:that.data.address,
@@ -93,6 +101,9 @@ Page({
               url: '/pages/shopping_car/shopping_car'
             })
           }
+        })
+        wx.redirectTo({
+          url: '../index/index',
         })
       }).catch(err=>{
         wx.hideLoading()

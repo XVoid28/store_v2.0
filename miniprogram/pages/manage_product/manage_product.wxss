@@ -1,0 +1,17 @@
+.head{
+  background-color: #ff502f;
+  height: 6vh;
+}
+.search{
+  background-color: #fff;
+  width: 70%;
+  height: 70%;
+  border-radius: 10rpx;
+  font-size: 25rpx;
+  margin-left: 20rpx;
+}
+.pro_img{
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 10rpx;
+}

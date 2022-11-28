@@ -11,6 +11,20 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/my/my",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "管理",
+          "pathName": "pages/manage_product/manage_product",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }
