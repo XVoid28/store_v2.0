@@ -54,6 +54,37 @@ Page({
       console.log('失败',err.data);
     })
   },
+  // 完成订单
+  confirm_finish(e){
+    console.log(e);
+    let that = this
+    wx.showModal({
+      title: '提示',
+      content: '为了保证你的权益，请确定你已经收到该书！',
+      success (res) {
+        if (res.confirm) {
+          db.collection('order').doc(e.currentTarget.dataset.id).update({
+            data:{
+              type:"已完成"
+            }
+          }).then(res=>{
+            console.log('更改订单状态完成',res);
+          }).catch(err=>{
+            console.log('更改订单状态出错',err);
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
+  // 联系卖家
+  call_seller(e){
+    wx.makePhoneCall({
+      phoneNumber: e.currentTarget.dataset.number
+    })
+    console.log(e);
+  },
   /**
    * 生命周期函数--监听页面加载
    */

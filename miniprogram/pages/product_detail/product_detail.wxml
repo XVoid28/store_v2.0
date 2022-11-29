@@ -39,7 +39,7 @@
 
 <!-- 提交栏 -->
 <van-goods-action>
-  <van-goods-action-icon icon="chat-o" text="联系卖家" dot open-type="contact"/>
+  <van-goods-action-icon icon="chat-o" text="联系卖家" dot bind:click="contact"/>
   <van-goods-action-icon icon="cart-o" text="购物车" url="../shopping_car/shopping_car" link-type="switchTab"/>
   <van-goods-action-button text="加入购物车" type="warning" bind:click="add_shopping_car"/>
   <van-goods-action-button text="立即购买" bind:click="add_order"/>

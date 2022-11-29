@@ -11,30 +11,19 @@ Page({
   // 立即购买
   add_order(){
     let that = this
-    let product = that.data.product
-    let books = []
-    let b = {
-      product_id:product.id,
-      product_img:product.img[0],
-      product_name:product.name,
-      product_price:product.price,
-      product_num:1
-    }
-    books.push(b)
-    wx.setStorage({
-      key:'books',
-      data:books
+    that.add_shopping_car().then(res=>{
+      wx.redirectTo({
+        url: '../shopping_car/shopping_car',
+      })
     })
-    wx.navigateTo({
-      url: '../add_order/add_order',
-    })
+
   },
   // 加购物车
   add_shopping_car(){
     let that = this
     let product = that.data.product
-    // 不能买自己的书
-    if(product.seller == app.globalData.userData._openid){
+    // 不能买自己的书 不等于号用作测试
+    if(product.seller != app.globalData.userData._openid){
       wx.showModal({
         title: '提示',
         content: '你不能加购自己上架的书籍！',
@@ -64,13 +53,15 @@ Page({
           //加购
           db.collection('shopping_car').add({
             data:{
+              seller:product.seller,
+              sellerPhoneNumber:product.sellerPhoneNumber,
               product_id:product._id,
               product_img:product.img[0],
               product_name:product.name,
               product_price:product.price,
               //数量默认1
               product_num:1,
-              time:db.serverDate()
+              time:db.serverDate(),
             }
           }).then(res=>{
             wx.hideLoading()
@@ -104,7 +95,15 @@ Page({
       console.log('获取书籍异常',err);
     })
   },
-
+  // 联系卖家
+  contact(){
+    let that = this
+    console.log(that)
+    wx.makePhoneCall({
+      phoneNumber: that.data.product.sellerPhoneNumber
+    })
+    
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -24,7 +24,9 @@ Page({
         console.log('轮播图获取失败',err);
       }
     })
-    db.collection('product').get({
+    db.collection('product').where({
+      isSale:true
+    }).get({
       success:res=>{
         console.log('商品获取成功',res);
         that.setData({

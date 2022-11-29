@@ -68,6 +68,7 @@ Page({
   // 下单事件
   add_order(){
     let that = this
+    console.log(that)
     if(that.data.address == {} || that.data.books.length == 0){
       //没书或没地址
       wx.showToast({
@@ -88,7 +89,8 @@ Page({
           all_price:that.data.all_price,
           time:db.serverDate(),
           buyer:app.globalData.userData._openid,
-          seller:that.data.books[0]._openid
+          seller:that.data.books[0].seller,
+          sellerPhoneNumber:that.data.books[0].sellerPhoneNumber
         }
       }).then(res=>{
         wx.hideLoading()
@@ -96,7 +98,15 @@ Page({
           title: '下单成功',
           icon:'success'
         })
-        // 清除页面缓存
+        db.collection('product').doc(that.data.books[0].product_id).update({
+          data:{
+            remarks:that.data.remarks,
+            buyer:that.data.address,
+            isSale:false
+          }
+        }).then(res=>{
+          console.log('状态更改成功');
+          // 清除页面缓存
         wx.removeStorage({
           key: 'books',
           success(res){
@@ -107,6 +117,9 @@ Page({
         })
         wx.redirectTo({
           url: '../index/index',
+        })
+        }).catch(err=>{
+          console.log('出现异常',err);
         })
       }).catch(err=>{
         wx.hideLoading()

@@ -1,0 +1,54 @@
+<view class="lay_col_spa pad_20">
+  <!-- 书籍信息展示框 -->
+  <view class="lay_col_cen pad_20 case">
+    <view class="lay_row_sta">
+      <text>书籍信息</text>
+    </view>
+    <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin_bottom: 10rpx"/>
+    <view class="lay_row_sta" style="font-size: 25rpx;height: 70rpx;">
+      <text>书名：</text>
+      <text style="margin-left: 10rpx;">{{name}}</text>
+    </view>
+    <view class="lay_row_sta" style="font-size: 25rpx;height: 70rpx;">
+      <text>买家电话：</text>
+      <text style="margin-left: 10rpx;">{{phoneNumber}}</text>
+    </view>
+    <view class="lay_row_sta" style="font-size: 25rpx;height: 70rpx;">
+      <text>买家地址：</text>
+      <text style="margin-left: 10rpx;">{{address}}</text>
+    </view>
+  </view>
+  <!-- 简介 -->
+  <view class="lay_col_cen pad_20 case">
+    <view class="lay_row_sta">
+      <text>买家备注</text>
+    </view>
+    <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin_bottom: 10rpx"/>
+    <view class="lay_row_sta" style="font-size: 25rpx;">
+      <text>简介：</text>
+      <text style="height: 120rpx;">{{details}}</text>
+    </view>
+  </view>
+  <!-- 分类 -->
+  <view class="lay_col_cen pad_20 case" style="margin-top: 40rpx">
+    <view class="lay_row_spa">
+      <text>书籍分类</text>
+    </view>
+    <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom: 10rpx"/>
+    <view class="lay_row_sta" style="flex-wrap: wrap;">
+      <text>{{select_classify}}</text>
+    </view>
+  </view>
+  <!-- 图片 -->
+  <view class="lay_col_cen pad_20 case" style="margin-top: 40rpx">
+      <view class="lay_row_spa">
+        <text>书籍照片</text>
+      </view>
+      <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom: 10rpx"/>
+      <view class="lay_row_sta" style="flex-wrap: wrap">
+        <block wx:for="{{img}}" wx:key="index">
+          <image src="{{item}}" class="swiper_img"/>
+        </block>
+      </view>
+  </view>
+</view>

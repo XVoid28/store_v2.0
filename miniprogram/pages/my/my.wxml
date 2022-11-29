@@ -43,7 +43,11 @@
         <text>我的发布</text>
       </navigator>
     </view>
-    <!-- <view class="lay_row_spa fun_row">
+    <view class="lay_row_spa fun_row">
+      <navigator url="../sold_books/sold_books" class="lay_col_cen fun_item">
+        <image src="/icons/已售出.png" class="fun_img"/>
+        <text>已售书籍</text>
+      </navigator>
       <view class="lay_col_cen fun_item">
         <image src="/icons/地址.png" class="fun_img"/>
         <text>我的地址</text>
@@ -52,10 +56,6 @@
         <image src="/icons/地址.png" class="fun_img"/>
         <text>我的地址</text>
       </view>
-      <view class="lay_col_cen fun_item">
-        <image src="/icons/地址.png" class="fun_img"/>
-        <text>我的地址</text>
-      </view>
-    </view> -->
+    </view>
   </view>
 </view>

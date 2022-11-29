@@ -10,7 +10,9 @@
     "pages/upload_product/upload_product",
     "pages/manage_product/manage_product",
     "pages/manage_order/manage_order",
-    "pages/update_product/update_product"
+    "pages/update_product/update_product",
+    "pages/sold_books/sold_books",
+    "pages/buyer_detail/buyer_detail"
     
   ],
   "window":{

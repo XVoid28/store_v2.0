@@ -13,7 +13,8 @@
     <block wx:for="{{order}}" wx:key="index">
       <view class="lay_col_cen pad_20 order">
         <view class="lay_row_spa">
-          <text style="color: #888888;">订单号 {{item._id}}</text>
+          <van-button wx:if="{{item.type=='进行中'}}" type="info" size="small" bind:click="call_seller" data-number="{{item.sellerPhoneNumber}}">联系卖家</van-button>
+          <text wx:else style="color: #888888;">订单号 {{item._id}}</text>
           <text>{{item.type}}</text>
         </view>
         <van-divider style="width: 100%;" custom-style="margin-top:10rpx;margin-bottom:10rpx"></van-divider>
@@ -32,7 +33,7 @@
         <van-divider style="width: 100%;" custom-style="margin-top:10rpx;margin-bottom:10rpx"></van-divider>
         <view class="lay_row_spa">
           <text style="color: #888888;">{{item.time}}</text>
-          <text style="color:red;font-weight: bold;">总金额：{{item.all_price}} 元</text>
+          <van-button wx:if="{{item.type=='进行中'}}" type="primary" size="small" bind:click="confirm_finish" data-id="{{item._id}}">确认收货</van-button>
         </view>
       </view>
     </block>

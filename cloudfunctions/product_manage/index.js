@@ -11,7 +11,8 @@ exports.main = async (event, context) => {
   if(event.method == 'get_product'){
     return await db.collection('product').where({
       //卖家open_id号
-      seller:event.seller
+      seller:event.seller,
+      isSale:true
     }).orderBy("time","desc").get()
   }else if(event.method == 'search'){
     return await db.collection('product').where({
@@ -23,6 +24,11 @@ exports.main = async (event, context) => {
   }else if(event.method == 'to_classify'){
     return await db.collection('product').where({
       select_classify:event.classify
+    }).orderBy("time","desc").get()
+  }else if(event.method == 'get_product_sold'){
+    return await db.collection('product').where({
+      seller:event.seller,
+      isSale:false
     }).orderBy("time","desc").get()
   }
 }
