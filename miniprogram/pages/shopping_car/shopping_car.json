@@ -2,6 +2,7 @@
   "usingComponents": {
     "van-checkbox": "@vant/weapp/checkbox/index",
     "van-checkbox-group": "@vant/weapp/checkbox-group/index",
-    "van-submit-bar": "@vant/weapp/submit-bar/index"
+    "van-submit-bar": "@vant/weapp/submit-bar/index",
+    "van-empty": "@vant/weapp/empty/index"
   }
 }

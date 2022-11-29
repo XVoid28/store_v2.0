@@ -1,5 +1,5 @@
-<view class="lay_col_sta pad_20">
-  <van-checkbox-group value="{{result}}" bind:change="select_product" style="width: 100%;">
+<view class="lay_col_sta pad_20" >
+  <van-checkbox-group value="{{result}}" wx:if="{{product_list.length}}" bind:change="select_product" style="width: 100%;">
     <block wx:for="{{product_list}}" wx:key="index">
       <van-checkbox shape="square" name="{{index}}" label-class="product_case">
         <view class="lay_row_spa" style="margin-top: 20rpx;margin-bottom: 20rpx;margin-right: 20rpx;" data-id="{{item._id}}" bindlongpress="delete_product">
@@ -16,6 +16,7 @@
       </van-checkbox>
     </block>
   </van-checkbox-group>
+  <van-empty image="error" description="这里还什么都没有哦" style="margin-top: 180rpx;" ></van-empty>
 </view>
 
 <van-submit-bar

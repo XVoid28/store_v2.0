@@ -46,6 +46,13 @@
           "query": "type=%E8%BF%9B%E8%A1%8C%E4%B8%AD",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "首页",
+          "pathName": "pages/index/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

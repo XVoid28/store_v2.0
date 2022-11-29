@@ -42,7 +42,7 @@ Page({
             desc: '请授权登录，否则无法使用本程序',
             success(res){
                 var user=res.userInfo
-                //登陆数据设置到全局数据里
+                //登录数据设置到全局数据里
                 app.globalData.userData=user
                 that.setData({
                     userInfo:user
@@ -56,7 +56,7 @@ Page({
                         console.log(res)
                         /**
                          * 如果查到的结果length==0说明是第一次登录，要添加到数据库
-                         * 否则之前已经登陆过，执行自动登录
+                         * 否则之前已经登录过，执行自动登录
                          * */
                         if(res.data.length == 0){
                             wx.cloud.database().collection('login_users').add({
@@ -79,7 +79,7 @@ Page({
                                 userInfo: res.data[0]
                             })
                             wx.showToast({
-                              title: '登陆成功',
+                              title: '登录成功',
                               icon:'success'
                             })
                         }

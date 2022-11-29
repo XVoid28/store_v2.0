@@ -3,12 +3,43 @@ const db = wx.cloud.database()
 Page({
   data:{
     swiper:[],
-    pro_list:[]
+    pro_list:[],
+    search_list:[],
+    search_case:false
+  },
+  // 展示搜索框
+  search_case_show(){
+    let that = this
+    that.setData({
+      search_case:true
+    })
   },
   // 搜索事件，按下回车生效
   search(e){
     let that = this
-    console.log(e.detail)
+    if(e.detail){
+      wx.showLoading({
+        title: '搜索中'
+      })
+      db.collection('product').where({
+        isSale:true,
+        name: db.RegExp({
+          regexp: e.detail,
+          options: 'i'
+        })
+      }).get().then(res=>{
+        wx.hideLoading()
+        that.setData({
+          search_list:res.data
+        })
+        console.log('搜索结果',res);
+      })
+    }else{
+      that.setData({
+        search_list:[],
+        search_case:false
+      })
+    } 
   },
   // onLoad函数页面加载成功时就执行
   onLoad:function(options){

@@ -137,4 +137,17 @@
   justify-content: space-between;
   margin-top: 30rpx;
 }
-
+/* 搜索结果列表 */
+.search_case{
+  width: 90%;
+  height: 600rpx;
+  background-color: #e6e6e6;
+  position: fixed;
+  top: 100rpx;
+  z-index: 999;
+}
+.g_img{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 10rpx;
+}
