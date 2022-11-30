@@ -12,14 +12,15 @@
     "pages/manage_order/manage_order",
     "pages/update_product/update_product",
     "pages/sold_books/sold_books",
-    "pages/buyer_detail/buyer_detail"
+    "pages/buyer_detail/buyer_detail",
+    "pages/classify/classify"
     
   ],
   "window":{
     "backgroundColor": "#f6f6f6",
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#FF502F",
-    "navigationBarTitleText": "Book Store",
+    "navigationBarTitleText": "杰の书城",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {
@@ -32,6 +33,12 @@
         "text": "首页",
         "iconPath": "/icons/首页.png",
         "selectedIconPath": "/icons/首页 (选).png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "icons/分类.png",
+        "selectedIconPath": "/icons/分类(选).png"
       },
       {
         "pagePath": "pages/shopping_car/shopping_car",

@@ -28,26 +28,6 @@
   </swiper>
 </view>
 
-<!-- 板块 -->
-<view class="fun">
-  <view class="fun_title">
-    <text>书籍分类</text>
-  </view>
-  <view class="fun_a">
-    <view class="fun_left">
-      <image src="/icons/公共课.png" class="fun_left_img"></image>
-    </view>
-    <view class="fun_right">
-      <view class="right_a">
-        <image src="/icons/专业课.png" class="right_a_img"></image>
-      </view>
-      <view class="right_b">
-        <image src="/icons/其他类.png" class="right_a_img"></image>
-      </view>
-    </view>
-  </view>
-</view>
-
 <!-- 书籍列表 -->
 <view class="pro">
   <van-divider contentPosition="center" style="width: 96%;">书籍</van-divider>

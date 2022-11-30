@@ -8,6 +8,15 @@ Page({
   data: {
     product:{}
   },
+  // 点开图片仔细看
+  clickSwiper(e){
+    let that = this
+    let index = e.currentTarget.dataset.index
+    wx.previewImage({
+      current:that.data.product.img[index],
+      urls: that.data.product.img
+    })
+  },
   // 立即购买
   add_order(){
     let that = this

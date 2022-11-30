@@ -1,0 +1,31 @@
+<!-- 分类页面 -->
+<view class="lay_row_cen" style="height: 100vh;">
+  <!-- 左侧栏 -->
+  <scroll-view style="width: 25%;height: 100%; background-color: #e6e6e6;border-right: 2rpx solid #e9e9e9;font-size: 25rpx;color: #888888;" scroll-y="true">
+    <block wx:for="{{classify}}" wx:key="index">
+      <view class="lay_row_cen {{select_classify==item.name?'select_classify':'classify_def'}}" data-name="{{item.name}}" bindtap="select_classify">
+        <text>{{item.name}}</text>
+      </view>
+    </block>
+  </scroll-view>
+  <!-- 右侧栏 -->
+  <scroll-view style="width: 75%;height: 100%;" scroll-y="true">
+    <block wx:for="{{goods}}" wx:key="index">
+      <navigator url="../product_detail/product_detail?id={{item._id}}">
+        <view class="lay_row_spa pad_20">
+          <image src="{{item.img[0]}}" class="goods_img"/>
+            <view class="lay_col_spa" style="height: 130rpx;width: 70%;">
+              <view class="lay_row_sta">
+                <text>{{item.name}}</text>
+              </view>
+              <view class="lay_row_spa">
+                <text style="color: red;font-size: 25rpx;font-weight: bolder;">￥：{{item.price}}</text>
+              </view>
+            </view>
+        </view>
+      </navigator>
+      
+      <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom: 10rpx"/>
+    </block>
+  </scroll-view>
+</view>

@@ -2,7 +2,7 @@
 <!-- 图片轮播 -->
 <swiper class="pro_case" circular="true" indicator-dots="true">
   <block wx:for="{{product.img}}" wx:key="index">
-    <swiper-item>
+    <swiper-item bindtap="clickSwiper" data-index="{{index}}">
       <image src="{{item}}" class="pro_img"></image>
     </swiper-item>
   </block>
