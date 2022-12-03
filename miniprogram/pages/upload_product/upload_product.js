@@ -97,43 +97,49 @@ Page({
   async submit(){
     let that = this
     let img = that.data.img
-    wx.showLoading({
-      title: '上传中',
-    })
-    for(let i = 0;i<img.length;i++){
-      var timestamp = new Date().getTime()
-      await wx.cloud.uploadFile({
-        cloudPath:'product/'+timestamp+''+i+''+'.png',
-        filePath:img[i]
-      }).then(res=>{
-        console.log(res.fileID);
-        img[i] = res.fileID
-        if(i+1 == img.length){
-          //上传完了
-          wx.cloud.callFunction({
-            name:"product",
-            data:{
-              name:that.data.name,
-              price:that.data.price,
-              img:img,
-              select_classify:that.data.select_classify,
-              details:that.data.details,
-              sellerId:app.globalData.userData._openid,
-              sellerPhoneNumber:that.data.phoneNumber
-            }
-          }).then(res => {
-            wx.hideLoading()
-            wx.showToast({
-              title: '已上架',
-              icon:'success'
-            })
-            wx.navigateBack()
-          })
-        }
-      }).catch(error=>{
-        //handle error
+    if(img.length == 0){
+      wx.showToast({
+        title: '你有未填信息！',
+        icon:"error"
       })
-      
+    }else{
+      wx.showLoading({
+        title: '上传中',
+      })
+      for(let i = 0;i<img.length;i++){
+        var timestamp = new Date().getTime()
+        await wx.cloud.uploadFile({
+          cloudPath:'product/'+timestamp+''+i+''+'.png',
+          filePath:img[i]
+        }).then(res=>{
+          console.log(res.fileID);
+          img[i] = res.fileID
+          if(i+1 == img.length){
+            //上传完了
+            wx.cloud.callFunction({
+              name:"product",
+              data:{
+                name:that.data.name,
+                price:that.data.price,
+                img:img,
+                select_classify:that.data.select_classify,
+                details:that.data.details,
+                sellerId:app.globalData.userData._openid,
+                sellerPhoneNumber:that.data.phoneNumber
+              }
+            }).then(res => {
+              wx.hideLoading()
+              wx.showToast({
+                title: '已上架',
+                icon:'success'
+              })
+              wx.navigateBack()
+            })
+          }
+        }).catch(error=>{
+          //handle error
+        })
+      }
     }
   },
   /**
