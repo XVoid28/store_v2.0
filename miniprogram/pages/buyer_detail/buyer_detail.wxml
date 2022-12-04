@@ -18,14 +18,14 @@
       <text style="margin-left: 10rpx;">{{address}}</text>
     </view>
   </view>
-  <!-- 简介 -->
+  <!-- 备注 -->
   <view class="lay_col_cen pad_20 case">
     <view class="lay_row_sta">
       <text>买家备注</text>
     </view>
     <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin_bottom: 10rpx"/>
     <view class="lay_row_sta" style="font-size: 25rpx;">
-      <text>简介：</text>
+      <text>备注：</text>
       <text style="height: 120rpx;">{{details}}</text>
     </view>
   </view>

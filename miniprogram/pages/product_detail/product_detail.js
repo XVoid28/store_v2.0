@@ -32,7 +32,7 @@ Page({
     let that = this
     let product = that.data.product
     // 不能买自己的书 不等于号用作测试
-    if(product.seller != app.globalData.userData._openid){
+    if(product.seller == app.globalData.userData._openid){
       wx.showModal({
         title: '提示',
         content: '你不能加购自己上架的书籍！',
