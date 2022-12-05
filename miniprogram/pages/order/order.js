@@ -69,6 +69,7 @@ Page({
             }
           }).then(res=>{
             console.log('更改订单状态完成',res);
+            that.get_order("全部")
           }).catch(err=>{
             console.log('更改订单状态出错',err);
           })

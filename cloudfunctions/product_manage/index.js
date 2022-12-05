@@ -23,7 +23,9 @@ exports.main = async (event, context) => {
     }).orderBy("time","desc").get()
   }else if(event.method == 'to_classify'){
     return await db.collection('product').where({
-      select_classify:event.classify
+      select_classify:event.classify,
+      seller:event.seller,
+      isSale:true
     }).orderBy("time","desc").get()
   }else if(event.method == 'get_product_sold'){
     return await db.collection('product').where({

@@ -5,11 +5,11 @@
     <scroll-view style="width: 100%;height: 100%;" scroll-y="true">
       <view class="lay_col_sta pad_20">
         <block wx:for="{{search_list}}" wx:key="index">
-          <view class="lay_row_spa">
+          <navigator url="../product_detail/product_detail?id={{item._id}}" class="lay_row_spa">
             <image src="{{item.img[0]}}" class="g_img"/>
             <text>{{item.name}}</text>
             <text style="color: red;">￥：{{item.price}}</text>
-          </view>
+          </navigator>
           <van-divider style="width: 100%;" custom-style="margin-top: 10rpx;margin-bottom: 10rpx"></van-divider>
         </block>
       </view>

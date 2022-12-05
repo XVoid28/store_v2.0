@@ -16,7 +16,7 @@
       </van-checkbox>
     </block>
   </van-checkbox-group>
-  <van-empty image="error" description="这里还什么都没有哦" style="margin-top: 180rpx;" ></van-empty>
+  <van-empty wx:else image="error" description="这里还什么都没有哦" style="margin-top: 180rpx;" ></van-empty>
 </view>
 
 <van-submit-bar

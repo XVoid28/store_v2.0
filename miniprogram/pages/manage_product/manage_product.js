@@ -94,7 +94,8 @@ Page({
         name:"product_manage",
         data:{
           method:"to_classify",
-          classify:classify
+          classify:classify,
+          seller:app.globalData.userData._openid
         }
       }).then(res=>{
         wx.hideLoading()
