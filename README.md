@@ -5,6 +5,7 @@
 - [图标来源](https://www.iconfont.cn/)
 
 ## 数据库表及其字段
+在云数据库中配置对应的数据库及其字段，或者在js代码中修改db.collection('')中的内容为设置的数据库名
 
 - classify表 用于存储分类
   - name 类别名
